@@ -1,18 +1,14 @@
 import React from "react";
 
-function WeatherDisplay({ weather }) {
-  // Destructure the temperature and conditions from props
-  const { temperature, conditions } = weather;
-
-  // Determine the color of the temperature based on the threshold
-  const temperatureColor = temperature > 20 ? 'red' : 'blue';
+const WeatherDisplay = ({ weather }) => {
+  const tempColor = weather.temperature > 20 ? "red" : "blue";
 
   return (
     <div>
-      <p style={{ color: temperatureColor }}>Temperature: {temperature}°C</p>
-      <span style={{ color: 'black' }}>Conditions: {conditions}</span>
+      <p style={{ color: tempColor }}>Temperature: {weather.temperature}°C</p>
+      <p>Conditions: {weather.conditions}</p>
     </div>
   );
-}
+};
 
 export default WeatherDisplay;
